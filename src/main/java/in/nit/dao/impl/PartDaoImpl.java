@@ -40,4 +40,12 @@ public class PartDaoImpl implements IPartDao {
 		ht.update(part);
 	}
 
+	@Override
+	public List<Object[]> getPartIdAndCode() {
+		String hql = " select partId,partCode 	from in.nit.model.Part ";
+		@SuppressWarnings({ "deprecation", "unchecked" })
+		List<Object[]> list = (List<Object[]>) ht.find(hql);
+		return list;
+	}
+
 }

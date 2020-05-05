@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import in.nit.model.PurchaseDtl;
 import in.nit.model.PurchaseOrder;
+import in.nit.service.IPartService;
 import in.nit.service.IPurchaseOrderService;
 import in.nit.service.IShipmentTypeService;
 import in.nit.service.IWhUserTypeService;
@@ -24,6 +26,9 @@ public class PurchaseOrderController {
 
 	@Autowired
 	private IPurchaseOrderService service;
+	
+	@Autowired
+	private IPartService partService;
 
 	@Autowired
 	private IShipmentTypeService shipService;
@@ -88,6 +93,21 @@ public class PurchaseOrderController {
 		PurchaseOrder order = service.getOnePurchaseOrder(id);
 		model.addAttribute("order", order);
 		return "";
+	}
+	
+	
+	public String showChild(
+			@RequestParam("partId")Integer partId,
+			Model model
+			) {
+		PurchaseOrder po = service.getOnePurchaseOrder(partId);
+		model.addAttribute("po", po);
+		
+		model.addAttribute("purchaseDtl", new PurchaseDtl());
+		
+		//Drop Down Data
+		//List<Object[]> partsList = partService.get
+		return null;
 	}
 
 	

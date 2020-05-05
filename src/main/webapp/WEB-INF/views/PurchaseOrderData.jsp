@@ -52,6 +52,9 @@
 									<td>
 										<a href="delete?oid=${po.purchId}" class="btn btn-danger"> DELETE </a>
 									</td>
+									<td>
+										<a href="Add Part"></a>
+									</td>
 								</tr>
 							</c:forEach>
 						</table>
