@@ -18,31 +18,37 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-header bg-primary text-white text-center">
-				<H3>WELCOME TO ORDER METHOD DATA PAGE</H3>
+				<H3>WELCOME TO PART DATA PAGE</H3>
 
 			</div>
 			<div class="card-body">
-				<a href="excel">EXCEL</a> | <a href="pdf">PDF</a>
+				<!-- <a href="excel">EXCEL</a> | <a href="pdf">PDF</a> -->
 				<c:choose>
 					<c:when test="${!empty list}">
 						<table border="1" class="table table-hover">
 							<tr class="bg-success text-white">
 								<th>ID</th>
-								<th>MODE</th>
 								<th>CODE</th>
-								<th>TYPE</th>
-								<th>ACCEPT</th>
+								<th>WIDTH</th>
+								<th>LENGTH</th>
+								<th>HEIGHT</th>
+								<th>COST</th>
+								<th>CURRENCY</th>
+								<th>UOM</th>
 								<th>DESCRIPTION</th>
 								<th colspan="3">OPERATION</th>
 							</tr>
 							<c:forEach items="${list}" var="ob">
 								<tr>
-									<th>${ob.orderId}</th>
-									<th>${ob.orderMode}</th>
-									<th>${ob.orderCode}</th>
-									<th>${ob.orderType}</th>
-									<th>${ob.orderAccpt}</th>
-									<th>${ob.description}</th>
+									<th>${ob.partId}</th>
+									<th>${ob.partCode}</th>
+									<th>${ob.dimWidth}</th>
+									<th>${ob.dimLenth}</th>
+									<th>${ob.dimHeight}</th>
+									<th>${ob.baseCost}</th>
+									<th>${ob.baseCurrency}</th>
+									<th>${ob.uomOb.uomModel}</th>
+									<th>${ob.descr}</th>
 									<td><a href="edit?oid=${ob.orderId}" class="btn btn-info">
 											EDIT </a></td>
 									<td><a href="view?oid=${ob.orderId}"

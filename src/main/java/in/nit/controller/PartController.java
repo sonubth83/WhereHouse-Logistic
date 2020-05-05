@@ -21,12 +21,13 @@ import in.nit.util.CommonUtil;
 public class PartController {
 	@Autowired
 	private IPartService service;
-	
+
 	@Autowired
 	private IUomService uomService;
-	
-	/*@Autowired
-	private IOrderMethodService orderMethodService;*/
+
+	/*
+	 * @Autowired private IOrderMethodService orderMethodService;
+	 */
 
 	@RequestMapping("/register")
 	public String showPage(Model model) {
@@ -34,34 +35,38 @@ public class PartController {
 		commonUi(model);
 		return "PartRegister";
 	}
-	
-	//@SuppressWarnings("unused")
+
+	// @SuppressWarnings("unused")
 	private void commonUi(Model model) {
 		List<Object[]> list = uomService.getUomIdAndUomModel();
-		Map<Integer,String> uomMap = CommonUtil.convert(list);
+		Map<Integer, String> uomMap = CommonUtil.convert(list);
 		model.addAttribute("uomMap", uomMap);
-		
-		
-		/*List<Object[]> omPurchaseList = orderMethodService.getOrderIdAndOrderCode("Purchage");
-		Map<Integer,String> omPurchaseMap = CommonUtil.convert(omPurchaseList);
-		model.addAttribute("omPurchaseMap", omPurchaseMap);*/
+
+		/*
+		 * List<Object[]> omPurchaseList =
+		 * orderMethodService.getOrderIdAndOrderCode("Purchage"); Map<Integer,String>
+		 * omPurchaseMap = CommonUtil.convert(omPurchaseList);
+		 * model.addAttribute("omPurchaseMap", omPurchaseMap);
+		 */
 	}
-	
-	@RequestMapping(name="/save", method=POST)
+
+	@RequestMapping(name = "/save", method = POST)
 	public String showRegister(
-			@ModelAttribute Part part,
+			@ModelAttribute Part part, 
 			Model model
 			) {
 		Integer id = service.savePart(part);
 		model.addAttribute("part", new Part());
-		String message = "Part '"+id+"' saved";
+		String message = "Part '" + id + "' saved";
 		model.addAttribute("message", message);
 		return "ShipmentTypeRegister";
 	}
-	
-	
-	
-	
-	
+
+	@RequestMapping("/all")
+	public String getAllPartData(Model model) {
+		List<Part> list = service.getAllPart();
+		model.addAttribute("list", list);
+		return "PartDataView";
+	}
 
 }
