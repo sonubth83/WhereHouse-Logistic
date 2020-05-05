@@ -15,6 +15,7 @@ public class PurchaseOrder {
 	@GeneratedValue
 	@Column(name = "pid")
 	private Integer purchId;
+	
 	@Column(name = "pcode")
 	private String purchOrdCode;
 
@@ -28,10 +29,13 @@ public class PurchaseOrder {
 
 	@Column(name = "rnum")
 	private String refNum;
+	
 	@Column(name = "qcheck")
 	private String qualCheck;
+	
 	@Column(name = "defstatus")
 	private String defStatus;
+	
 	@Column(name = "desrc")
 	private String descr;
 

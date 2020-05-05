@@ -85,15 +85,17 @@ public class PurchaseOrderController {
 		return "PurchaseOrderData";
 	}
 	
-	@RequestMapping("/get")
+	@RequestMapping("/view")
 	public String getOnePurchaseOrder(
-			@RequestParam()Integer id,
-			Model model
+				@RequestParam("purch")Integer id,
+				Model model
 			) {
 		PurchaseOrder order = service.getOnePurchaseOrder(id);
 		model.addAttribute("order", order);
-		return "";
+		return "PurchaseOrderSingleView";
 	}
+	
+	
 	
 	
 	public String showChild(

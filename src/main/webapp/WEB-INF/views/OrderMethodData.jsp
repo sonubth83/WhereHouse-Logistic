@@ -43,12 +43,15 @@
 									<th>${ob.orderType}</th>
 									<th>${ob.orderAccpt}</th>
 									<th>${ob.description}</th>
-									<td><a href="edit?oid=${ob.orderId}" class="btn btn-info">
-											EDIT </a></td>
-									<td><a href="view?oid=${ob.orderId}"
-										class="btn btn-warning"> VIEW </a></td>
-									<td><a href="delete?oid=${ob.orderId}"
-										class="btn btn-danger"> DELETE </a></td>
+									<td>
+										<a href="edit?oid=${ob.orderId}" class="btn btn-info">EDIT</a>
+									</td>
+									<td>
+										<a href="view?oid=${ob.orderId}" class="btn btn-warning"> VIEW </a>
+									</td>
+									<td>
+										<a href="delete?oid=${ob.orderId}" class="btn btn-danger"> DELETE </a>
+									</td>
 								</tr>
 							</c:forEach>
 						</table>

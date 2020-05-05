@@ -64,8 +64,11 @@ public class PartController {
 
 	@RequestMapping("/all")
 	public String getAllPartData(Model model) {
+		System.out.println("Part Executed : 1");
 		List<Part> list = service.getAllPart();
+		System.out.println("Part Executed : "+list);
 		model.addAttribute("list", list);
+		System.out.println("Part Executed : 3");
 		return "PartDataView";
 	}
 

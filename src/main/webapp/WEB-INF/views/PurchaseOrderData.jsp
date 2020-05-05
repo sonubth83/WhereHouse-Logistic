@@ -31,7 +31,7 @@
 								<th>QUALITY</th>
 								<th>STATUS</th>
 								<th>DESCRIPTION</th>
-								<th colspan="3">OPERATION</th>
+								<th colspan="4">OPERATION</th>
 							</tr>
 							<c:forEach items="${list}" var="po">
 								<tr>
@@ -44,16 +44,16 @@
 									<td>${po.defStatus}</td>
 									<td>${po.descr}</td>
 									<td>
-										<a href="edit?oid=${po.purchId}" class="btn btn-info"> EDIT </a>
+										<a href="edit?purch=${po.purchId}" class="btn btn-info"> EDIT </a>
 									</td>
 									<td>
-										<a href="view?oid=${po.purchId}" class="btn btn-warning"> VIEW </a>
+										<a href="view?purch=${po.purchId}" class="btn btn-warning"> VIEW </a>
 									</td>
 									<td>
-										<a href="delete?oid=${po.purchId}" class="btn btn-danger"> DELETE </a>
+										<a href="delete?purch=${po.purchId}" class="btn btn-danger"> DELETE </a>
 									</td>
 									<td>
-										<a href="Add Part"></a>
+										<a href="">ADD PART</a>
 									</td>
 								</tr>
 							</c:forEach>
@@ -77,48 +77,4 @@
 		</div>
 	</div>
 </body>
-
-
-<%-- <body>
-	<h3>Welcome to Order Method Data Page</h3>
-	<br><br>
-	<c:choose>
-		<c:when test="${!empty list}">
-			<table border="1">
-				<tr>
-					<td>ID</td>
-					<td>MODE</td>
-					<td>CODE</td>
-					<td>TYPE</td>
-					<td>ACCEPT</td>
-					<td>DESCRIPTION</td>
-					<td colspan="3">OPERATION</td>
-				</tr>
-				<c:forEach items="${list}" var="ob">
-					<tr>
-						<th>${ob.orderId}</th>
-						<th>${ob.orderMode}</th>
-						<th>${ob.orderCode}</th>
-						<th>${ob.orderType}</th>
-						<th>${ob.orderAccpt}</th>
-						<th>${ob.description}</th>
-						<th>
-							<a href="delete?oid=${ob.orderId}">DELETE</a>
-						</th>
-						<th>
-							<a href="edit?oid=${ob.orderId}">EDIT</a>
-						</th>
-						
-						<th>
-							<a href="view?oid=${ob.orderId}">VIEW</a>
-						</th>
-					</tr>
-				</c:forEach>
-			</table>
-		</c:when>
-		<c:otherwise>
-			NO DATA AVAILABLE
-		</c:otherwise>
-	</c:choose>
-</body> --%>
 </html>

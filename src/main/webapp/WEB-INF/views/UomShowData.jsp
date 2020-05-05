@@ -13,13 +13,13 @@
 			<td>ID</td> <th>${ob.uomId}</th>
 		</tr>
 		<tr>
-			<td>TYPE</td> <th>${view.uomType}</th>
+			<td>TYPE</td> <th>${ob.uomType}</th>
 		</tr>
 		<tr>
-			<td>MODEL</td> <th>${view.uomModel}</th>
+			<td>MODEL</td> <th>${ob.uomModel}</th>
 		</tr>
 		<tr>
-			<td>DESCRIPTION</td> <th>${view.description}</th>
+			<td>DESCRIPTION</td> <th>${ob.description}</th>
 		</tr>
 	</table>
 </body>
