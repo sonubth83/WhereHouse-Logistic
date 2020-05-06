@@ -6,10 +6,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>UOM Data View</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -34,15 +37,12 @@
 									<th>${ob.uomType}</th>
 									<th>${ob.uomModel}</th>
 									<th>${ob.description}</th>
-									<th>
-										<a href="edit?ummid=${ob.uomId}" class="btn btn-success">EDIT</a>
+									<th><a href="edit?ummid=${ob.uomId}"
+										class="btn btn-success">EDIT</a></th>
+									<th><a href="view?ummid=${ob.uomId}" class="btn btn-info">VIEW</a>
 									</th>
-									<th>
-										<a href="view?ummid=${ob.uomId}" class="btn btn-info">VIEW</a>
-									</th>
-									<th>
-										<a href="delete?ummid=${ob.uomId}" class="btn btn-danger">DELETE</a>
-									</th>
+									<th><a href="delete?ummid=${ob.uomId}"
+										class="btn btn-danger">DELETE</a></th>
 									<th>
 								</tr>
 							</c:forEach>
@@ -53,7 +53,22 @@
 					</c:otherwise>
 				</c:choose>
 			</div>
-		</div> <!-- card end -->
+			<c:if test="${!empty message }">
+				<c:choose>
+					<c:when test="${opr eq 'DEL'}">
+						<div class="card-footer bg-danger text-white text-center">
+							<b>${message}</b>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="card-footer bg-danger text-white text-center">
+							<b>${message}</b>
+						</div>
+					</c:otherwise>
+				</c:choose>
+			</c:if>
+		</div>
+		<!-- card end -->
 	</div>
 </body>
 </html>

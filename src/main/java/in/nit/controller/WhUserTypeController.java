@@ -67,7 +67,7 @@ public class WhUserTypeController {
 		
 		List<WhUserType> list = service.getAllWhUser();
 		model.addAttribute("list", list);
-		return "WhUserTypeData";
+		return "WhUserViewData";
 	}
 	
 	@RequestMapping("/edit")
