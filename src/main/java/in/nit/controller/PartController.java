@@ -59,7 +59,8 @@ public class PartController {
 		model.addAttribute("part", new Part());
 		String message = "Part '" + id + "' saved";
 		model.addAttribute("message", message);
-		return "ShipmentTypeRegister";
+		commonUi(model);
+		return "PartDataView";
 	}
 
 	@RequestMapping("/all")
