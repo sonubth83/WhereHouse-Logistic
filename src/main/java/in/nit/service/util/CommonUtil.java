@@ -1,4 +1,4 @@
-package in.nit.util;
+package in.nit.service.util;
 
 import java.util.LinkedHashMap;
 import java.util.List;
