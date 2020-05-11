@@ -13,6 +13,7 @@ public class Category {
 	@GeneratedValue
 	@Column(name = "cid")
 	private Integer categoryId;
+	
 	@Column(name = "cname")
 	private String categoryName;
 

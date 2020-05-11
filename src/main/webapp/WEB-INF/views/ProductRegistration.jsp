@@ -59,21 +59,28 @@ div {
 						</div>
 					</div>
 
-					<%-- <div class="row">
+					<div class="row">
 						<div class="col-1"></div>
 						<div class="col-3">
 							<label><b>CATEGORY</b></label>
 						</div>
 						<div class="col-4">
-							<form:select path="categoryData.categoryId" class="form-control">
-								<form:option value="">-SELECT-</form:option>
-								<form:options items="${categoryMap}" />
-							</form:select>
+							<select name="categoryData.categoryId" class="form-control">
+								<option value="0">-SELECT-</option>
+								<c:forEach items="${categoryMap}" var="entry">
+								    <option value=${entry.key}>${entry.value}</option>
+								</c:forEach>
+							</select>
+							
+							<%-- <form:select path="categoryData.categoryId" class="form-control">
+								<form:option value="0" label="-SELECT-"/>
+                    			<form:options items="${categoryMap}"/>
+							</form:select> --%>
 						</div>
 						<div class="col-4">
 							<!-- FORM ERROR MESSAGE -->
 						</div>
-					</div> --%>
+					</div>
 
 					<div class="row">
 						<div class="col-1"></div>
