@@ -69,13 +69,9 @@ div {
 								<option value="0">-SELECT-</option>
 								<c:forEach items="${categoryMap}" var="entry">
 								    <option value=${entry.key}>${entry.value}</option>
-								</c:forEach>
+								</c:forEach> 
 							</select>
 							
-							<%-- <form:select path="categoryData.categoryId" class="form-control">
-								<form:option value="0" label="-SELECT-"/>
-                    			<form:options items="${categoryMap}"/>
-							</form:select> --%>
 						</div>
 						<div class="col-4">
 							<!-- FORM ERROR MESSAGE -->
